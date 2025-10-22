@@ -1,14 +1,31 @@
 #include "main.h"
+#include "robot.hpp"
 
-/**
- * Runs the user autonomous code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the autonomous
- * mode. Alternatively, this function may be called in initialize or opcontrol
- * for non-competition testing purposes.
- *
- * If the robot is disabled or communications is lost, the autonomous task
- * will be stopped. Re-enabling the robot will restart the task, not re-start it
- * from where it left off.
- */
-void autonomous() {}
+void autonomous() {
+	// Simple demo autonomous: drive forward, turn in place, stop
+	// Drive forward at 10% for 2 seconds
+	left_mtr1.move(10);
+	left_mtr2.move(10);
+	left_mtr3.move(10);
+	right_mtr1.move(10);
+	right_mtr2.move(10);
+	right_mtr3.move(10);
+	pros::delay(2000);
+
+	// Turn in place: left forward, right reverse at 10% for 2 seconds
+	left_mtr1.move(10);
+	left_mtr2.move(10);
+	left_mtr3.move(10);
+	right_mtr1.move(-10);
+	right_mtr2.move(-10);
+	right_mtr3.move(-10);
+	pros::delay(2000);
+
+	// Stop
+	left_mtr1.move(0);
+	left_mtr2.move(0);
+	left_mtr3.move(0);
+	right_mtr1.move(0);
+	right_mtr2.move(0);
+	right_mtr3.move(0);
+}
