@@ -20,8 +20,8 @@ void opcontrol() {
 	const double SCALE = 0.7; // scale factor applied to final speed
 
 	while (true) {
-		int turn = master.get_analog(ANALOG_RIGHT_X);   // axis1 in python
-		int forward = master.get_analog(ANALOG_LEFT_Y); // axis3 in python
+		int turn = master.get_analog(ANALOG_LEFT_Y);   // axis1 in python
+		int forward = master.get_analog(ANALOG_RIGHT_X); // axis3 in python
 
 		if (std::abs(forward) < DEADZONE) forward = 0;
 		if (std::abs(turn) < DEADZONE) turn = 0;
