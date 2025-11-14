@@ -1,31 +1,17 @@
 #include "main.h"
 #include "robot.hpp"
 
+
 void autonomous() {
-	// Simple demo autonomous: drive forward, turn in place, stop
-	// Drive forward at 10% for 2 seconds
-	left_mtr1.move(10);
-	left_mtr2.move(10);
-	left_mtr3.move(10);
-	right_mtr1.move(10);
-	right_mtr2.move(10);
-	right_mtr3.move(10);
-	pros::delay(2000);
-
-	// Turn in place: left forward, right reverse at 10% for 2 seconds
-	left_mtr1.move(10);
-	left_mtr2.move(10);
-	left_mtr3.move(10);
-	right_mtr1.move(-10);
-	right_mtr2.move(-10);
-	right_mtr3.move(-10);
-	pros::delay(2000);
-
-	// Stop
-	left_mtr1.move(0);
-	left_mtr2.move(0);
-	left_mtr3.move(0);
-	right_mtr1.move(0);
-	right_mtr2.move(0);
-	right_mtr3.move(0);
+	master.rumble(".");
+	// DriveMovement drive(2.75, 14.76);
+	
+	// // Move forward 1 meter at 50% velocity
+	// drive.moveDistance(1.682242, 50);
+	
+	// // Wait a moment
+	// pros::delay(500);
+	
+	// drive.turnDegrees(-45.0, 50);
+	master.rumble(".");
 }
